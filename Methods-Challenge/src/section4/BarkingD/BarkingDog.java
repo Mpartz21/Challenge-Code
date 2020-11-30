@@ -1,4 +1,4 @@
-package com.example.Decmial.BarkingD;
+package section4.BarkingD;
 
 public class BarkingDog {
     public static boolean shouldWakeUp(boolean barking,int hourOfDay){

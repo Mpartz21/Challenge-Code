@@ -1,4 +1,4 @@
-package com.example.Decmial;
+package section4;
 
 public class DecimalComparator {
     public static boolean areEqualByThreeDecimalPlaces(double firstNumber, double secondNumber){

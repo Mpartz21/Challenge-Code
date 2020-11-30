@@ -1,4 +1,4 @@
-package com.example.Decmial.timbuchalka;
+package section4.timbuchalka;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package com.example.Decmial.MegaBytes;
+package section4.MegaBytes;
 
 public class MegaBytesConverter {
 

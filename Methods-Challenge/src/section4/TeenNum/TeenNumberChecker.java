@@ -1,4 +1,4 @@
-package com.example.Decmial.TeenNum;
+package section4.TeenNum;
 
 public class TeenNumberChecker {
     public static boolean hasTeen(int type1, int type2, int type3) {

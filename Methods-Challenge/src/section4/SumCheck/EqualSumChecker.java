@@ -1,4 +1,4 @@
-package com.example.Decmial.SumCheck;
+package section4.SumCheck;
 
 public class EqualSumChecker {
     public static boolean hasEqualSum(int type1,int type2,int type3){

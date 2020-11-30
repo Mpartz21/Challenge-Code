@@ -1,4 +1,4 @@
-package com.example.Decmial.LeapYear;
+package section4.LeapYear;
 
 public class LeapYear {
     public static boolean isLeapYear(int year){
