@@ -37,7 +37,7 @@ NOTE: Do not add a main method to the solution code.
 public class Circle {
     private double radius;
 
-    public Circle (double radius){
+    public Circle(double radius){
         if (radius < 0){
             radius = 0;
         }
@@ -45,10 +45,11 @@ public class Circle {
     }
 
     public double getArea (){
-        return this.radius * this.radius * Math.PI;
+        return radius * radius * Math.PI;
     }
 
     public double getRadius (){
         return this.radius;
     }
+
 }
