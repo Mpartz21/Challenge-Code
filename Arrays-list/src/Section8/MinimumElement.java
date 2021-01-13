@@ -26,23 +26,26 @@ public class MinimumElement {
     private static int readInteger(){
         Scanner scanner = new Scanner(System.in);
         int numberToRead = scanner.nextInt();
-        scanner.close();
         return numberToRead;
     }
-    private static int[] readElement(int elements){
+    private static int[] readElements(int elements){
         int[] arrayToFill = new int[elements];
         Scanner scanner = new Scanner(System.in);
         for(int i = 0;i< elements; i++){
             arrayToFill[i] = scanner.nextInt();
         }
-        scanner.close();
         return arrayToFill;
     }
     private static int findMin(int[] array){
-        int minValue = 0;
-        for (int i =0;i < array.length;i++){
-            if(array[i] < array[i+1]){
-                minValue = array[i];
+        int minValue = array[0];
+        for (int i =0;i < array.length;i++) {
+            for (int j = 1; j < array.length ; j++) {
+
+                if (array[i] < array[j]) {
+                    if(array[i] < minValue ){
+                        minValue = array[i];
+                    }
+                }
             }
         }
         return minValue;
@@ -51,7 +54,7 @@ public class MinimumElement {
     public static void main(String[] args) {
         int test= readInteger();
 
-        int[] testArray = readElement(test);
+        int[] testArray = readElements(test);
 
         int minTest = findMin(testArray);
         System.out.println(minTest);
