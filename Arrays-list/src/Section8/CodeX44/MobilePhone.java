@@ -46,19 +46,55 @@ public class MobilePhone {
     }
     public boolean addNewContact(Contact contact){
         if(findContact(contact.getName()) >= 0){
+            System.out.println("Contact is already on file");
             return false;
         }
         myContacts.add(contact);
         return true;
     }
     public boolean updateContact(Contact oldContact,Contact newContact){
-        if(findContact(oldContact.getName()) >= 0){
+        if(findContact(oldContact) < 0){
             return false;
+        }else {
+            myContacts.set(findContact(oldContact),newContact);
+            return true;
         }
-        return true;
     }
-    public int findContact(Contact contact){
-        int contactExist = myContacts.contains(contact);
+    public boolean removeContact(Contact contact){
+        if (findContact(contact) <0){
+            return false;
+        }else {
+            myContacts.remove(contact);
+            return true;
+        }
+    }
+    private int findContact(Contact contact){
+        return this.myContacts.indexOf(contact);
     }
 
+    private int findContact(String contactName){
+        for (int i = 0; i<this.myContacts.size();i++){
+            Contact contact = this.myContacts.get(i);
+            if(contact.getName().equals(contactName)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public Contact queryContact(String name){
+        if(findContact(name) < 0){
+            return null;
+        }else {
+            return myContacts.get(findContact(name));
+        }
+    }
+
+    public void printContacts(){
+        System.out.println("Contact List:");
+        for (int i =0; i < this.myContacts.size();i++){
+            System.out.println((i+1) + ". " + myContacts.get(i).getName()
+                            + " -> " + myContacts.get(i).getPhoneNumber());
+        }
+    }
 }
