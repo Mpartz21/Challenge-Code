@@ -79,7 +79,9 @@ public class Customer {
 
     public Customer(String name,double initialTransactions){
         this.name=name;
-        this.transactions.add(initialTransactions);
+        this.transactions= new ArrayList<Double>();
+        addTransaction(initialTransactions);
+
     }
 
     public String getName() {

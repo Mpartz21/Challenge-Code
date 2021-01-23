@@ -72,6 +72,7 @@ Be extremely careful about spaces and spelling in the printed output.
  */
 
 import java.util.ArrayList;
+import java.util.concurrent.Callable;
 
 public class Branch {
     private String name;
@@ -90,5 +91,45 @@ public class Branch {
         return customers;
     }
 
+    private Customer findCustomer(String customerName){
+        for(int i = 0;i<this.customers.size();i++){
+            Customer customer = this.customers.get(i);
+            if (customer.getName().equals(customerName)){
+                return customer;
+            }
+        }
+        return null;
+    }
 
+    public boolean newCustomer(String customerName, double initialTransaction){
+        if(findCustomer(customerName) == null){
+            customers.add(new Customer(customerName,initialTransaction));
+            return true;
+        }
+        System.out.println("Contact is already on file");
+        return false;
+    }
+
+    public boolean addCustomerTransaction(String customerName,double transaction){
+        Customer existing = findCustomer(customerName);
+
+        if (existing != null){
+            existing.addTransaction(transaction);
+        return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Bank bank = new Bank("National Australia Bank");
+        bank.addBranch("Adelaide");
+        bank.addCustomer("Adelaide", "Tim", 50.05);
+        bank.addCustomer("Adelaide", "Mike", 175.34);
+        bank.addCustomer("Adelaide", "Percy", 220.12);
+        bank.addCustomerTransaction("Adelaide", "Tim", 44.22);
+        bank.addCustomerTransaction("Adelaide", "Tim", 12.44);
+        bank.addCustomerTransaction("Adelaide", "Mike", 1.65);
+        bank.listCustomers("Adelaide", true);
+
+    }
 }
