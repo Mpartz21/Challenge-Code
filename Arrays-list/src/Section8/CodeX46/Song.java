@@ -12,23 +12,23 @@ A constructor that accepts two Strings (name of the album and artist). It initia
 
 And three methods, they are addSong(), has two parameters of type String (title of song), double (duration of song) and returns a boolean. Returns true if the song was added successfully or false otherwise.
 
- findSong(), has one parameter of type String (title of song) and returns a Song. Returns the Song if it exists, null if it doesn't exists.
+findSong(), has one parameter of type String (title of song) and returns a Song. Returns the Song if it exists, null if it doesn't exists.
 
- addToPlayList(), has two parameters of type int (track number of song in album) and LinkedList (the playlist) that holds objects of type Song, and returns a boolean. Returns true if it exists and it was added successfully using the track number, or false otherwise.
+addToPlayList(), has two parameters of type int (track number of song in album) and LinkedList (the playlist) that holds objects of type Song, and returns a boolean. Returns true if it exists and it was added successfully using the track number, or false otherwise.
 
- addToPlayList(), has two parameters of type String (title of song) and LinkedList (the playlist) that holds objects of type Song, and returns a boolean. Returns true if it exists and it was added successfully using the name of the song, or false otherwise.
+addToPlayList(), has two parameters of type String (title of song) and LinkedList (the playlist) that holds objects of type Song, and returns a boolean. Returns true if it exists and it was added successfully using the name of the song, or false otherwise.
 
 2. Song
 
 It has two fields, a String called title and a double called duration.
 
- A constructor that accepts a String (title of the song) and a double (duration of the song). It initialises title and duration.
+A constructor that accepts a String (title of the song) and a double (duration of the song). It initialises title and duration.
 
- And two methods, they are:
+And two methods, they are:
 
 getTitle(), getter for title.
 
- toString(), Songs overriding toString method. Returns a String in the following format: "title: duration"
+toString(), Songs overriding toString method. Returns a String in the following format: "title: duration"
 
 -> SAMPLE INPUT
 
@@ -87,4 +87,22 @@ NOTE: If you get an error from the Evaluate class, it's most likely the construc
  */
 
 public class Song {
+    private String title;
+    private double duration;
+
+    public Song(String title,double duration){
+        this.title = title;
+        this.duration = duration;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    @Override
+    public String toString() {
+        return getTitle() + ": " + this.duration;
+    }
+
+
 }
