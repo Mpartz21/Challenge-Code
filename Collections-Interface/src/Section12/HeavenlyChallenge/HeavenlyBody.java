@@ -54,7 +54,8 @@ public abstract class HeavenlyBody {
 
     public enum BodyTypes{
         PLANET,
-        MOON
+        MOON,
+        DWARF_PLANET
     }
 
     public HeavenlyBody(String name, double orbitalPeriod, BodyTypes bodyTypes) {
@@ -71,7 +72,7 @@ public abstract class HeavenlyBody {
         return orbitalPeriod;
     }
 
-    public boolean addMoon(HeavenlyBody moon) {
+    public boolean addSatellite(HeavenlyBody moon) {
         return this.satellites.add(moon);
     }
 
@@ -81,7 +82,7 @@ public abstract class HeavenlyBody {
 
 
     @Override
-    public boolean equals(Object obj) {
+    public final boolean equals(Object obj) {
         if(this == obj) {
             return true;
         }
