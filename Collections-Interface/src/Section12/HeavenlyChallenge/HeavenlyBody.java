@@ -132,12 +132,11 @@ public abstract class HeavenlyBody {
         @Override
         public boolean equals(Object obj) {
             Key key = (Key) obj;
-            if (this.name.equals(key.getName())){
+            if (this.name.equals(key.getName())) {
                 return (this.bodyType == key.getBodyType());
             }
             return false;
         }
-
         @Override
         public String toString() {
             return this.name + ": " + this.bodyType;
