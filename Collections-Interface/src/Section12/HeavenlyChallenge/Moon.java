@@ -1,2 +1,4 @@
-package Section12.HeavenlyChallenge;public class Moon {
+package Section12.HeavenlyChallenge;
+
+    public class Moon {
 }
