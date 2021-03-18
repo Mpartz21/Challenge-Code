@@ -1,4 +1,2 @@
-package Section12.HeavenlyChallenge;
-
-    public class Main {
+package Section12.HeavenlyChallenge;public class Main {
 }

@@ -1,2 +1,4 @@
-package Section12.CodeX50;public class Main {
+package Section12.CodeX50;
+
+public class Main {
 }
